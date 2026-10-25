@@ -82,7 +82,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 1.5rem 5rem;
-  color: #263238;
+  color: var(--text);
 }
 
 .about-hero {
@@ -102,7 +102,7 @@
 .about-mission__eyebrow {
   display: inline-block;
   margin-bottom: 0.8rem;
-  color: #0f766e;
+  color: var(--accent);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -113,7 +113,7 @@
 .about-intro h2,
 .about-mission h2 {
   margin: 0;
-  color: #17212b;
+  color: var(--text-h);
   line-height: 1.12;
 }
 
@@ -131,7 +131,7 @@
 .about-hero p {
   max-width: 540px;
   margin-top: 1.25rem;
-  color: #52606b;
+  color: var(--muted);
   font-size: 1.08rem;
 }
 
@@ -173,7 +173,7 @@
 
 .about-intro p {
   margin-top: 1rem;
-  color: #52606b;
+  color: var(--muted);
 }
 
 .about-images {
@@ -187,7 +187,8 @@
   margin: 0;
   overflow: hidden;
   border-radius: 1.25rem;
-  background: #e5e7eb;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
   box-shadow: 0 15px 35px rgba(15, 23, 42, 0.1);
 }
 
@@ -207,8 +208,8 @@
 
 .about-image figcaption {
   padding: 0.8rem 1rem;
-  background: #ffffff;
-  color: #374151;
+  background: var(--surface);
+  color: var(--text);
   font-size: 0.84rem;
   font-weight: 700;
   text-align: center;
@@ -221,13 +222,13 @@
   gap: 2rem;
   margin-top: 2rem;
   padding: 2.5rem;
-  border-left: 5px solid #f4a261;
+  border-left: 5px solid var(--accent-strong);
   border-radius: 0 1.25rem 1.25rem 0;
-  background: #eef7f5;
+  background: #1d1529;
 }
 
 .about-mission__number {
-  color: #0f766e;
+  color: var(--accent);
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 800;
   line-height: 1;
@@ -236,7 +237,7 @@
 .about-mission p {
   max-width: 780px;
   margin-top: 1rem;
-  color: #52606b;
+  color: var(--muted);
 }
 
 @media (max-width: 850px) {

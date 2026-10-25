@@ -5,8 +5,6 @@ import Footer from './components/footer.vue'
 
 <template>
   <NavBar />
-  <main>Bienvenido a los cursos de la UADY online</main>
-
   <RouterView />
   <Footer />
 </template>

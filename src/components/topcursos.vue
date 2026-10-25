@@ -102,19 +102,20 @@ topTresCursos.value = mezclarCursos(cursos).slice(0, 3)
     max-width: 900px;
     margin: 2rem auto;
     padding: 1.5rem;
-    background: #f8fafc;
+    background: #15111f;
+    border: 1px solid var(--border);
     border-radius: 18px;
     box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
   }
 
   h2 {
     margin: 0 0 0.5rem;
-    color: #1f2a44;
+    color: var(--text-h);
   }
 
   p {
     margin: 0 0 1.5rem;
-    color: #475569;
+    color: var(--muted);
   }
 
   .lista-top {
@@ -129,10 +130,10 @@ topTresCursos.value = mezclarCursos(cursos).slice(0, 3)
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: #ffffff;
+    background: #1e182b;
     border-radius: 16px;
     padding: 1rem;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border);
     box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
   }
 
@@ -140,7 +141,7 @@ topTresCursos.value = mezclarCursos(cursos).slice(0, 3)
     width: 42px;
     height: 42px;
     border-radius: 12px;
-    background: linear-gradient(135deg, #2563eb, #38bdf8);
+    background: linear-gradient(135deg, #7c3aed, #a78bfa);
     color: white;
     display: flex;
     align-items: center;
@@ -155,18 +156,18 @@ topTresCursos.value = mezclarCursos(cursos).slice(0, 3)
 
   .contenido h3 {
     margin: 0 0 0.4rem;
-    color: #0f172a;
+    color: var(--text-h);
     font-size: 1.05rem;
   }
 
   .contenido p {
     margin: 0 0 0.4rem;
-    color: #475569;
+    color: var(--muted);
     line-height: 1.5;
   }
 
   .contenido span {
-    color: #64748b;
+    color: var(--muted);
     font-size: 0.82rem;
     font-weight: 600;
   }

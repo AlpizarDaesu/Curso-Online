@@ -2,9 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import Cursos from '../components/cursos.vue'
 import Inscribirse from '../components/inscribirse.vue'
-import OfertaBeca from '../components/ofertaBeca.vue'
+import MiniJuego from '../components/MiniJuego.vue'
 import Us from '../components/us.vue'
-import CursGrat from '../components/cursGrat.vue'
+import ChatView from '../views/chatview.vue'
 import Inicio from '../components/lobby.vue'
 import TopCursos from '../components/topcursos.vue'
 
@@ -16,9 +16,9 @@ const router = createRouter({
     { path: '/cursos', component: Cursos },
     { path: '/topcursos', component: TopCursos },
     { path: '/inscribirse', component: Inscribirse },
-    { path: '/ofertaBeca', component: OfertaBeca },
+    { path: '/MiniJuego', component: MiniJuego },
     { path: '/us', component: Us },
-    { path: '/cursGrat', component: CursGrat }
+    { path: '/chatview', component: ChatView },
   ]
 })
 

@@ -5,15 +5,14 @@ import lobbypng from '../assets/lobbypng.png'
 <template>
   <section class="hero">
     <div class="hero-content">
-      <span class="eyebrow">Aprende a tu ritmo</span>
-      <h1>Hay muchos caminos para crecer, encuentra el tuyo</h1>
+      <span class="eyebrow">The GamerShop</span>
+      <h1>Muchos mundo que explorar en un solo sitio</h1>
       <p class="lead">
-        Accede a opciones gratuitas, seas estudiante de la UADY o no. Elige el nivel, el horario y
-        aprende a tu ritmo, adaptándolo a tu día a día, estés estudiando o trabajando.
+       Accede a miles de reseñas y guías de juegos, descubre nuevos títulos y adqiere los que mas te gusten.
       </p>
       <div class="actions">
-        <button class="primary">Explorar cursos</button>
-        <button class="secondary">Más información</button>
+        <button class="primary">Explorar juegos</button>
+        <button class="secondary">Chat de soporte</button>
       </div>
     </div>
 
@@ -32,7 +31,8 @@ import lobbypng from '../assets/lobbypng.png'
     max-width: 1200px;
     margin: 2rem auto;
     padding: 2.5rem 2rem;
-    background: linear-gradient(135deg, #f8fbff 0%, #eef6ff 100%);
+    background: radial-gradient(circle at top right, #281b3d, #15111f 58%);
+    border: 1px solid var(--border);
     border-radius: 24px;
     box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
   }
@@ -48,8 +48,8 @@ import lobbypng from '../assets/lobbypng.png'
     width: fit-content;
     padding: 0.5rem 0.9rem;
     border-radius: 999px;
-    background: rgba(59, 130, 246, 0.12);
-    color: #1d4ed8;
+    background: rgba(167, 139, 250, 0.16);
+    color: #c4b5fd;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.04em;
@@ -60,14 +60,14 @@ import lobbypng from '../assets/lobbypng.png'
     margin: 0;
     font-size: clamp(2.2rem, 4vw, 4rem);
     line-height: 1.1;
-    color: #0f172a;
+    color: var(--text-h);
     letter-spacing: -0.04em;
   }
 
   .lead {
     margin: 0;
     max-width: 650px;
-    color: #475569;
+    color: var(--muted);
     font-size: 1.05rem;
     line-height: 1.7;
   }
@@ -94,15 +94,15 @@ import lobbypng from '../assets/lobbypng.png'
   }
 
   .primary {
-    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    background: linear-gradient(135deg, #7c3aed, #a78bfa);
     color: white;
-    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+    box-shadow: 0 10px 24px rgba(139, 92, 246, 0.3);
   }
 
   .secondary {
-    background: white;
-    color: #0f172a;
-    border: 1px solid #dbeafe;
+    background: #211a2e;
+    color: var(--text-h);
+    border: 1px solid var(--border);
   }
 
   .hero-visual {

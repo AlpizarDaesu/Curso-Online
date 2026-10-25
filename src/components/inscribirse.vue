@@ -146,17 +146,17 @@ const handleSubmit = (event: Event) => {
   justify-content: center;
   padding: 3rem 1.5rem;
   background:
-    radial-gradient(circle at 15% 10%, rgba(244, 162, 97, 0.23), transparent 28%),
-    linear-gradient(135deg, #f6f8fa 0%, #e9eff4 100%);
+    radial-gradient(circle at 15% 10%, rgba(139, 92, 246, 0.2), transparent 28%),
+    linear-gradient(135deg, #09070f 0%, #15111f 100%);
 }
 
 .login-card {
   width: min(100%, 570px);
   padding: 2.5rem;
-  border: 1px solid rgba(211, 219, 227, 0.9);
+  border: 1px solid var(--border);
   border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 24px 70px rgba(30, 47, 65, 0.13);
+  background: rgba(21, 17, 31, 0.97);
+  box-shadow: 0 24px 70px var(--shadow);
 }
 
 .login-card__header {
@@ -170,7 +170,7 @@ const handleSubmit = (event: Event) => {
   margin: 0 auto 1rem;
   place-items: center;
   border-radius: 50%;
-  background: #2c3e50;
+  background: var(--accent-strong);
   color: #ffffff;
   font-size: 1.4rem;
   font-weight: 800;
@@ -178,7 +178,7 @@ const handleSubmit = (event: Event) => {
 
 .login-card__eyebrow {
   margin: 0 0 0.45rem;
-  color: #c0392b;
+  color: var(--accent);
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -187,14 +187,14 @@ const handleSubmit = (event: Event) => {
 
 .login-card h1 {
   margin: 0;
-  color: #17212b;
+  color: var(--text-h);
   font-size: clamp(2rem, 5vw, 2.7rem);
   line-height: 1.15;
 }
 
 .login-card__description {
   margin: 0.65rem 0 0;
-  color: #66717d;
+  color: var(--muted);
   line-height: 1.6;
 }
 
@@ -205,7 +205,7 @@ const handleSubmit = (event: Event) => {
 
 .social-login > p {
   margin: 0 0 0.8rem;
-  color: #4b5662;
+  color: var(--muted);
   font-size: 0.9rem;
   font-weight: 700;
 }
@@ -222,16 +222,16 @@ const handleSubmit = (event: Event) => {
   height: 2.8rem;
   padding: 0;
   place-items: center;
-  border: 1px solid #d9e0e6;
+  border: 1px solid var(--border);
   border-radius: 50%;
-  background: #ffffff;
+  background: var(--surface-raised);
   cursor: pointer;
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .social-button:hover {
   transform: translateY(-2px);
-  border-color: #b7c1ca;
+  border-color: var(--accent);
   box-shadow: 0 7px 18px rgba(30, 47, 65, 0.12);
 }
 
@@ -245,7 +245,7 @@ const handleSubmit = (event: Event) => {
   align-items: center;
   gap: 1rem;
   margin-bottom: 1.5rem;
-  color: #7b8792;
+  color: var(--muted);
   font-size: 0.85rem;
   font-weight: 600;
 }
@@ -255,7 +255,7 @@ const handleSubmit = (event: Event) => {
   content: '';
   flex: 1;
   height: 1px;
-  background: #dce2e7;
+  background: var(--border);
 }
 
 .login-form {
@@ -269,7 +269,7 @@ const handleSubmit = (event: Event) => {
 }
 
 .form-field label {
-  color: #34414d;
+  color: var(--text);
   font-size: 0.85rem;
   font-weight: 750;
 }
@@ -279,23 +279,23 @@ const handleSubmit = (event: Event) => {
   width: 100%;
   min-height: 3rem;
   padding: 0.75rem 1rem;
-  border: 1px solid #d2d9df;
+  border: 1px solid var(--border);
   border-radius: 0.75rem;
   outline: none;
-  background: #ffffff;
-  color: #17212b;
+  background: #0f0c16;
+  color: var(--text);
   font: inherit;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-field input::placeholder {
-  color: #9aa4ad;
+  color: #8f849f;
 }
 
 .form-field input:focus,
 .form-field select:focus {
-  border-color: #c0392b;
-  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.16);
 }
 
 .select-wrap {
@@ -307,7 +307,7 @@ const handleSubmit = (event: Event) => {
   position: absolute;
   top: 50%;
   right: 1rem;
-  color: #65727e;
+  color: var(--muted);
   pointer-events: none;
   transform: translateY(-58%);
 }
@@ -327,18 +327,18 @@ const handleSubmit = (event: Event) => {
   gap: 0.75rem;
   border: 0;
   border-radius: 999px;
-  background: #c0392b;
+  background: var(--accent-strong);
   color: #ffffff;
   cursor: pointer;
   font: inherit;
   font-weight: 800;
-  box-shadow: 0 12px 25px rgba(192, 57, 43, 0.25);
+  box-shadow: 0 12px 25px rgba(139, 92, 246, 0.25);
   transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .login-button:hover {
-  background: #a92f24;
-  box-shadow: 0 15px 30px rgba(192, 57, 43, 0.3);
+  background: #7c3aed;
+  box-shadow: 0 15px 30px rgba(139, 92, 246, 0.3);
   transform: translateY(-1px);
 }
 
@@ -350,14 +350,14 @@ const handleSubmit = (event: Event) => {
   display: grid;
   gap: 0.7rem;
   margin-top: 1.5rem;
-  color: #5f6b76;
+  color: var(--muted);
   font-size: 0.82rem;
   line-height: 1.5;
   text-align: center;
 }
 
 .login-links a {
-  color: #c0392b;
+  color: var(--accent);
   font-weight: 700;
   text-decoration: none;
 }

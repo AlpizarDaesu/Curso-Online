@@ -28,7 +28,7 @@ const prevVideo = () => {
 }
 </script>
 
-<template>
+<template> 
   <section class="cursos-gratuitos">
     <h1>Cursos gratuitos</h1>
     <p>Explora los cursos gratuitos disponibles.</p>
@@ -73,23 +73,24 @@ const prevVideo = () => {
   h1 {
     font-size: 2.2rem;
     margin-bottom: 0.5rem;
-    color: #1f2a44;
+    color: var(--text-h);
   }
 
   p {
-    color: #4b5563;
+    color: var(--muted);
     margin-bottom: 1.5rem;
   }
 
   .carousel {
-    background: linear-gradient(135deg, #f3f7ff, #eef2ff);
+    background: linear-gradient(135deg, #1d1729, #120f19);
+    border: 1px solid var(--border);
     border-radius: 20px;
     padding: 1.25rem;
     box-shadow: 0 12px 30px rgba(37, 99, 235, 0.12);
   }
 
   .video-title {
-    background: rgba(31, 42, 68, 0.9);
+    background: #0d0a14;
     color: white;
     padding: 0.9rem 1rem;
     border-radius: 12px 12px 0 0;
@@ -124,7 +125,7 @@ const prevVideo = () => {
     flex: 1;
     border: none;
     border-radius: 12px;
-    background: #2563eb;
+    background: var(--accent-strong);
     color: white;
     padding: 0.8rem 1rem;
     font-weight: 700;
@@ -133,7 +134,7 @@ const prevVideo = () => {
   }
 
   button:hover {
-    background: #1d4ed8;
+    background: #7c3aed;
   }
 
   .dots {
@@ -147,14 +148,14 @@ const prevVideo = () => {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #cbd5e1;
+    background: #514365;
     display: inline-block;
     cursor: pointer;
     transition: 0.2s ease;
   }
 
   .dots span.active {
-    background: #2563eb;
+    background: var(--accent);
     transform: scale(1.1);
   }
 </style>

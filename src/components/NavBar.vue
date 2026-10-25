@@ -1,13 +1,14 @@
+
 <template>
   <nav class="navbar">
     <div class="logo">
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/3/30/Logo_UADY.svg?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original"
+        src="../assets/iconlobby.png"
         alt="Logo de UADY"
         width="135"
         height="62"
       >
-      <span>Cursos Online UADY</span>
+      <span>The GamerShop</span>
     </div>
 
     <RouterLink to="/lobby">Inicio</RouterLink>
@@ -17,9 +18,9 @@
       @mouseenter="showMenuCont = true"
       @mouseleave="showMenuCont = false"
     >
-      <span class="menu-title">¿Quienes somos?</span>
+      <span class="menu-title">¡Nuestros favoritos!</span>
       <div v-if="showMenuCont" class="dropdown-content">
-        <RouterLink to="/us">Sobre nosotros</RouterLink>
+        <RouterLink to="/us">Nuestra seleccion</RouterLink>
       </div>
     </div>
 
@@ -28,11 +29,10 @@
       @mouseenter="showMenu = true"
       @mouseleave="showMenu = false"
     >
-      <span class="menu-title">Cursos</span>
+      <span class="menu-title">Inicia Sesion</span>
       <div v-if="showMenu" class="dropdown-content">
-        <RouterLink to="/inscribirse">¿Como inscribirse?</RouterLink>
-        <RouterLink to="/cursos">Cursos</RouterLink>
-        <RouterLink to="/topcursos">Los Cursos mas top</RouterLink>
+        <RouterLink to="/inscribirse">Registrarse/Iniciar Sesion</RouterLink>
+        
       </div>
     </div>
 
@@ -41,9 +41,9 @@
       @mouseenter="showMenuC = true"
       @mouseleave="showMenuC = false"
     >
-      <span class="menu-title">Becas</span>
+      <span class="menu-title">Juego en Navegador</span>
       <div v-if="showMenuC" class="dropdown-content">
-        <RouterLink to="/ofertaBeca">Ofertas de becas</RouterLink>
+        <RouterLink to="/MiniJuego"> Tragones y Mazmorras</RouterLink>
       </div>
     </div>
 
@@ -52,9 +52,9 @@
       @mouseenter="showMenuR = true"
       @mouseleave="showMenuR = false"
     >
-      <span class="menu-title">Cursos Gratuitos</span>
+      <span class="menu-title">Chat de ayuda</span>
       <div v-if="showMenuR" class="dropdown-content">
-        <RouterLink to="/cursGrat">Cursos disponibles</RouterLink>
+        <RouterLink to="/chatview">Chat</RouterLink>
       </div>
     </div>
   </nav>
@@ -78,7 +78,8 @@ const showMenuC = ref(false)
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: #2c3e50;
+    background-color: #0d0a14;
+    border-bottom: 1px solid var(--border);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
   }
 
@@ -86,7 +87,7 @@ const showMenuC = ref(false)
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    color: white;
+    color: var(--text-h);
     font-size: 1.5rem;
     font-weight: bold;
   }
@@ -105,13 +106,13 @@ const showMenuC = ref(false)
   }
 
   .nav-links a {
-    color: white;
+    color: var(--text);
     text-decoration: none;
   }
 
   a,
   .menu-title {
-    color: white;
+    color: var(--text);
     text-decoration: none;
     cursor: pointer;
   }
@@ -125,14 +126,17 @@ const showMenuC = ref(false)
     top: 100%;
     left: 0;
     min-width: 150px;
-    background: rgb(102, 102, 102);
-    color: black;
+    background: #191323;
+    color: var(--text);
     display: flex;
     flex-direction: column;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 12px 28px var(--shadow);
   }
 
   .dropdown-content a:hover {
-    background: #8a8989;
+    background: #33234d;
   }
 </style>

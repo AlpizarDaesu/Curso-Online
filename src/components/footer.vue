@@ -2,10 +2,10 @@
   <footer class="footer">
     <div class="footer__content">
       <div class="footer__brand">
-        <span class="footer__logo">CU</span>
+        <span class="footer__logo">GS</span>
         <div>
-          <strong>Cursos Online UADY</strong>
-          <p>Aprende y desarrolle con nuestros cursos.</p>
+          <strong>The GaymerShop</strong>
+          <p>Descubre miles de juegos y guías.</p>
         </div>
       </div>
 
@@ -21,7 +21,7 @@
       </nav>
     </div>
 
-    <p class="footer__copyright">© {{ currentYear }} Cursos Online UADY</p>
+    <p class="footer__copyright">© {{ currentYear }} The GamerShop. Todos los derechos reservados.</p>
   </footer>
 </template>
 
@@ -29,20 +29,21 @@
 import { computed } from 'vue'
 
 const links = [
-  { label: 'Ofertas de becas', path: '/ofertaBeca' },
-  { label: 'Sobre nosotros', path: '/us' },
-  { label: 'Cómo inscribirse', path: '/inscribirse' }
+  { label: 'Tienda', path: '/ofertaBeca' },
+  { label: 'Recomendaciones', path: '/us' },
+  { label: 'Como registrarse', path: '/inscribirse' }
 ]
 
 const currentYear = computed(() => new Date().getFullYear())
 </script>
 
-<style scoped>
+<style scoped> 
 .footer {
   margin-top: auto;
   padding: 2rem 1.5rem 1.5rem;
-  background: #2c3e50;
+  background: #0d0a14;
   color: #ffffff;
+  border-top: 1px solid var(--border);
 }
 
 .footer__content {
@@ -66,8 +67,8 @@ const currentYear = computed(() => new Date().getFullYear())
   height: 3rem;
   place-items: center;
   border-radius: 50%;
-  background: #f4a261;
-  color: #2c3e50;
+  background: var(--accent-strong);
+  color: #fff;
   font-size: 1rem;
   font-weight: 800;
 }
@@ -98,7 +99,7 @@ const currentYear = computed(() => new Date().getFullYear())
 
 .footer__link:hover,
 .footer__link:focus-visible {
-  color: #f4a261;
+  color: var(--accent);
 }
 
 .footer__copyright {

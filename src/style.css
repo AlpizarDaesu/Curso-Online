@@ -3,11 +3,16 @@
 }
 
 :root {
-  --text: #374151;
-  --text-h: #0f172a;
-  --bg: #ffffff;
-  --border: #e5e7eb;
-  --shadow: rgba(15, 23, 42, 0.08);
+  --text: #e8e2f0;
+  --text-h: #fbfaff;
+  --bg: #09070f;
+  --surface: #15111f;
+  --surface-raised: #1e182b;
+  --muted: #b6abc9;
+  --border: #392d4d;
+  --accent: #a78bfa;
+  --accent-strong: #8b5cf6;
+  --shadow: rgba(0, 0, 0, 0.35);
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   font-family: var(--sans);
@@ -22,19 +27,19 @@
 }
 
 html {
-  background: #ffffff;
+  background: var(--bg);
 }
 
 body {
   margin: 0;
-  background: #ffffff;
+  background: var(--bg);
   color: var(--text);
 }
 
 #app {
   width: 100%;
   min-height: 100vh;
-  background: #ffffff;
+  background: var(--bg);
 }
 
 h1,
@@ -57,6 +62,7 @@ img {
   display: block;
 }
 
+#next-steps ul {
   padding: 0;
   display: flex;
   gap: 8px;

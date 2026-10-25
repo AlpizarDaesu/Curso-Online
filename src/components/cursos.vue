@@ -229,7 +229,8 @@ const cursosTecnologia = ref<Curso[]>([
     justify-content: space-between;
     gap: 2rem;
     padding: 2rem 1.5rem;
-    background: linear-gradient(135deg, #eef6ff, #f5f7ff);
+    background: linear-gradient(135deg, #1d1729, #120f19);
+    border: 1px solid var(--border);
     border-radius: 18px;
     margin-bottom: 2rem;
   }
@@ -241,7 +242,7 @@ const cursosTecnologia = ref<Curso[]>([
   .hero-text h1 {
     font-size: 2.2rem;
     margin-bottom: 1rem;
-    color: #1f2a44;
+    color: var(--text-h);
   }
 
   .hero-text p,
@@ -249,7 +250,7 @@ const cursosTecnologia = ref<Curso[]>([
   .section-header p,
   .detail-section p {
     font-size: 1rem;
-    color: #4b5563;
+    color: var(--muted);
     line-height: 1.6;
   }
 
@@ -265,7 +266,7 @@ const cursosTecnologia = ref<Curso[]>([
   }
 
   .intro h2 {
-    color: #1f2a44;
+    color: var(--text-h);
     margin-bottom: 0.5rem;
   }
 
@@ -279,20 +280,20 @@ const cursosTecnologia = ref<Curso[]>([
   .category-card {
     display: block;
     text-decoration: none;
-    background: #ffffff;
-    border: 2px solid #dbeafe;
+    background: var(--surface);
+    border: 2px solid var(--border);
     border-radius: 18px;
     padding: 2rem 1.5rem;
-    color: #1f2a44;
-    box-shadow: 0 10px 24px rgba(59, 130, 246, 0.08);
+    color: var(--text);
+    box-shadow: 0 10px 24px var(--shadow);
     transition: all 0.25s ease;
     min-height: 180px;
   }
 
   .category-card:hover {
     transform: translateY(-4px);
-    background: #eaf3ff;
-    border-color: #91c2ff;
+    background: #251b35;
+    border-color: var(--accent);
   }
 
   .category-card h3 {
@@ -302,21 +303,21 @@ const cursosTecnologia = ref<Curso[]>([
 
   .category-card p {
     margin: 0;
-    color: #475569;
+    color: var(--muted);
     line-height: 1.6;
   }
 
   .detail-section {
-    background: #f8fafc;
+    background: #15111f;
     border-radius: 18px;
     padding: 2rem 1.5rem;
     margin-bottom: 1.5rem;
-    border-left: 6px solid #3b82f6;
+    border-left: 6px solid var(--accent-strong);
   }
 
   .detail-section.alt {
     border-left-color: #8b5cf6;
-    background: #faf5ff;
+    background: #1d1529;
   }
 
   .section-header {
@@ -326,7 +327,7 @@ const cursosTecnologia = ref<Curso[]>([
   .section-header h2,
   .detail-section h2 {
     margin-top: 0;
-    color: #1f2a44;
+    color: var(--text-h);
   }
 
   .course-grid {
@@ -336,33 +337,33 @@ const cursosTecnologia = ref<Curso[]>([
   }
 
   .course-card {
-    background: #ffffff;
+    background: var(--surface);
     border-radius: 18px;
     overflow: hidden;
     box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--border);
     display: flex;
     flex-direction: column;
     min-height: 100%;
   }
 
   .course-header {
-    background: linear-gradient(180deg, #eaf6ff, #dfeefd);
+    background: linear-gradient(180deg, #2b2040, #1b1528);
     padding: 1.2rem 1.1rem 1rem;
-    border-bottom: 1px solid rgba(59, 130, 246, 0.12);
+    border-bottom: 1px solid var(--border);
   }
 
   .course-header h3 {
     margin: 0;
     font-size: 1.2rem;
     line-height: 1.4;
-    color: #0f172a;
+    color: var(--text-h);
     font-weight: 800;
   }
 
   .course-header p {
     margin: 0.5rem 0 0;
-    color: #475569;
+    color: var(--muted);
     font-size: 0.92rem;
     line-height: 1.5;
   }
@@ -380,7 +381,7 @@ const cursosTecnologia = ref<Curso[]>([
   }
 
   .course-body {
-    background: #fff;
+    background: var(--surface);
     padding: 1rem 1rem 1.2rem;
     display: flex;
     flex-direction: column;
@@ -388,7 +389,7 @@ const cursosTecnologia = ref<Curso[]>([
   }
 
   .course-meta {
-    color: #64748b;
+    color: var(--muted);
     font-size: 0.75rem;
     font-weight: 600;
     margin-bottom: 0.6rem;
@@ -396,7 +397,7 @@ const cursosTecnologia = ref<Curso[]>([
 
   .course-body h4 {
     margin: 0;
-    color: #0f172a;
+    color: var(--text-h);
     font-size: 1.05rem;
     line-height: 1.45;
     font-weight: 800;
@@ -406,9 +407,9 @@ const cursosTecnologia = ref<Curso[]>([
   .course-pill {
     align-self: flex-start;
     margin-top: 1rem;
-    background: rgba(34, 211, 238, 0.12);
-    border: 1px solid rgba(34, 211, 238, 0.35);
-    color: #0f766e;
+    background: rgba(167, 139, 250, 0.12);
+    border: 1px solid rgba(167, 139, 250, 0.4);
+    color: #c4b5fd;
     border-radius: 999px;
     padding: 0.45rem 0.8rem;
     font-size: 0.75rem;
