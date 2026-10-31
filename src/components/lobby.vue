@@ -11,8 +11,9 @@ import lobbypng from '../assets/lobbypng.png'
        Accede a miles de reseñas y guías de juegos, descubre nuevos títulos y adqiere los que mas te gusten.
       </p>
       <div class="actions">
-        <button class="primary">Explorar juegos</button>
-        <button class="secondary">Chat de soporte</button>
+        
+        <RouterLink to="/Tienda"><button class="primary">Explorar juegos</button></RouterLink>
+        <RouterLink to="/chatview"><button class="secondary">Chat de soporte</button></RouterLink>
       </div>
     </div>
 

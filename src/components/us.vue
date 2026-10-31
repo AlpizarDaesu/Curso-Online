@@ -2,18 +2,17 @@
   <section class="about-page">
     <div class="about-hero">
       <div class="about-hero__content">
-        <span class="about-hero__eyebrow">Nuestra historia</span>
-        <h1>Aprender puede cambiar tu futuro</h1>
+        <span class="about-hero__eyebrow">Nuestros favoritos de toda la vida</span>
+        <h1>CyberPunk 2077</h1>
         <p>
-          Cursos Online UADY nace de la pasión por ofrecer formación accesible,
-          útil y de calidad para que cada persona pueda avanzar en su carrera.
+         La historia sigue la lucha de V, un/una mercenario/a de Night City que lidia con las consecuencias de un atraco que salió mal y que resulta en un biochip experimental cibernético que contiene un engrama de la legendaria estrella de rock y terrorista Johnny Silverhand, que amenaza con sobrescribir lentamente la mente de V. 
         </p>
       </div>
 
       <div class="about-hero__image-wrap">
         <img
           class="about-hero__image"
-          src="https://www.evolmind.com/wp-content/uploads/2019/03/estudiantes.webp"
+          src="https://image.api.playstation.com/vulcan/ap/rnd/202111/3013/bxSj4jO0KBqUgAbH3zuNjCje.jpg?w=780&thumb=false"
           alt="Estudiante participando en un curso online de UADY"
           width="900"
           height="600"
@@ -23,53 +22,39 @@
 
     <div class="about-intro">
       <div class="about-intro__copy">
-        <span class="about-intro__eyebrow">¿Quiénes somos?</span>
-        <h2>Aprendizaje gratuito para todos</h2>
+        <span class="about-intro__eyebrow">Recomendacion imperdible</span>
+        <h2>Elden Ring</h2>
         <p>
-          La UADY comparte cursos, becas y contenidos de calidad desarrollados
-          junto a universidades y organizaciones líderes en todo el mundo.
+          El jugador elige una clase de personaje al inicio del juego, lo cual determina los hechizos y equipamiento con el que comienza la partida.
         </p>
         <p>
-          La formación es online, gratuita y está abierta a cualquier persona,
-          sin necesidad de ser cliente del banco. Todo el mundo puede aprender,
-          crecer y construir su propio futuro.
+          El combate contra los enemigos puede ser a melé o a distancia usando armas a distancia o hechizos. Se puede bloquear los ataques de los enemigos mediante escudos o esquivando. 
         </p>
       </div>
 
       <div class="about-images">
         <figure class="about-image about-image--large">
           <img
-            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=85"
+            src="https://images.steamusercontent.com/ugc/2058741034012526512/379E6434B473E7BE31C50525EB946D4212A8C8B3/"
             alt="Grupo de estudiantes trabajando juntos"
-            width="900"
+            width="2100"
             height="700"
             loading="lazy"
           >
-          <figcaption>Aprendizaje colaborativo</figcaption>
+          <figcaption>Elder Ring</figcaption>
         </figure>
 
-        <figure class="about-image about-image--small">
-          <img
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=700&q=85"
-            alt="Estudiante estudiando con una laptop"
-            width="700"
-            height="700"
-            loading="lazy"
-          >
-          <figcaption>Aprendizaje flexible</figcaption>
-        </figure>
+        
       </div>
     </div>
 
     <div class="about-mission">
-      <span class="about-mission__number">30 años</span>
+      <span class="about-mission__number">10 años</span>
       <div>
         <span class="about-mission__eyebrow">Nuestro compromiso</span>
-        <h2>Apoyando a la sociedad desde 1996</h2>
+        <h2>Apoyando a la sociedad gaymer desde 2016</h2>
         <p>
-          La UADY lanzó en 1996 una iniciativa para impulsar la
-          educación, la empleabilidad y el emprendimiento. Los cursos de la UADY forma parte de este compromiso y ayuda a convertir la
-          formación en una oportunidad real para personas y empresas.
+          Recordamos con cariño los 10 años de nuestra tienda, y nos sentimos orgullosos de haber sido parte de la comunidad gaymer durante todo este tiempo. Nuestro compromiso es seguir ofreciendo productos de calidad y experiencias únicas para todos nuestros clientes.
         </p>
       </div>
     </div>

@@ -29,7 +29,7 @@
 import { computed } from 'vue'
 
 const links = [
-  { label: 'Tienda', path: '/ofertaBeca' },
+  { label: 'Tienda', path: '/Tienda' },
   { label: 'Recomendaciones', path: '/us' },
   { label: 'Como registrarse', path: '/inscribirse' }
 ]

@@ -7,6 +7,9 @@ import Us from '../components/us.vue'
 import ChatView from '../views/chatview.vue'
 import Inicio from '../components/lobby.vue'
 import TopCursos from '../components/topcursos.vue'
+import Tienda from '../components/tienda.vue'
+import Carrito from '../components/carrito.vue'
+
 
 const router = createRouter({
   history: createWebHistory(),
@@ -19,6 +22,8 @@ const router = createRouter({
     { path: '/MiniJuego', component: MiniJuego },
     { path: '/us', component: Us },
     { path: '/chatview', component: ChatView },
+    { path: '/tienda', component: Tienda },
+    { path: '/carrito', component: Carrito },
   ]
 })
 

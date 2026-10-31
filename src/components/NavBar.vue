@@ -24,17 +24,9 @@
       </div>
     </div>
 
-    <div
-      class="dropdown"
-      @mouseenter="showMenu = true"
-      @mouseleave="showMenu = false"
-    >
-      <span class="menu-title">Inicia Sesion</span>
-      <div v-if="showMenu" class="dropdown-content">
-        <RouterLink to="/inscribirse">Registrarse/Iniciar Sesion</RouterLink>
-        
-      </div>
-    </div>
+    
+
+  
 
     <div
       class="dropdown"
@@ -44,6 +36,17 @@
       <span class="menu-title">Juego en Navegador</span>
       <div v-if="showMenuC" class="dropdown-content">
         <RouterLink to="/MiniJuego"> Tragones y Mazmorras</RouterLink>
+      </div>
+    </div>
+
+    <div
+      class="dropdown"
+      @mouseenter="showMenuT = true"
+      @mouseleave="showMenuT = false"
+    >
+      <span class="menu-title">Tienda</span>
+      <div v-if="showMenuT" class="dropdown-content">
+        <RouterLink to="/Tienda">Descubre nuestros productos</RouterLink>
       </div>
     </div>
 
@@ -67,6 +70,7 @@ const showMenuCont = ref(false)
 const showMenu = ref(false)
 const showMenuR = ref(false)
 const showMenuC = ref(false)
+const showMenuT = ref(false)
 </script>
 
 <style scoped>
