@@ -111,6 +111,7 @@ const addToCalendar = (item: ItemTienda) => {
         <h1 id="store-title">Explora la tienda</h1>
         <p class="intro">Tus próximas aventuras empiezan aquí.</p>
       </div>
+      
     </section>
 
     <section class="catalog" aria-label="Catálogo de videojuegos">

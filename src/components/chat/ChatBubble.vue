@@ -21,6 +21,7 @@ defineProps<Props>()
 .chat-message {
     display: flex;
     justify-content: flex-start;
+    
 }
 
 .chat-message--mine {
