@@ -59,28 +59,6 @@
         </div>
 
         <div class="form-field">
-          <label for="phone">Teléfono</label>
-          <input
-            id="phone"
-            v-model="form.phone"
-            type="tel"
-            autocomplete="tel"
-            placeholder="+34 600 000 000"
-          >
-        </div>
-
-        <div class="form-field">
-          <label for="course">Curso a elegir</label>
-          <div class="select-wrap">
-            <select id="course" v-model="form.course">
-              <option value="">Selecciona un curso</option>
-              <option value="Cursos de Idiomas">Cursos de Idiomas</option>
-              <option value="Cursos de Tecnologias">Cursos de Tecnologias</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-field">
           <label for="password">Contraseña</label>
           <input
             id="password"
@@ -93,8 +71,10 @@
 
         <button class="login-button" type="submit">
           Iniciar sesión
-          
         </button>
+        <p v-if="loginMessage" class="login-message" :class="{ 'login-message--error': loginError }">
+          {{ loginMessage }}
+        </p>
       </form>
 
       <div class="login-links">
@@ -109,15 +89,14 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
+import { useRouter } from 'vue-router'
+import type { LoginForm } from '../interfaces/insInterface'
+import { login } from '../stores/auth'
 
-interface LoginForm {
-  name: string
-  email: string
-  phone: string
-  course: string
-  password: string
-}
+const router = useRouter()
+const loginMessage = ref('')
+const loginError = ref(false)
 
 const form = reactive<LoginForm>({
   name: '',
@@ -130,11 +109,18 @@ const form = reactive<LoginForm>({
 const handleSubmit = (event: Event) => {
   event.preventDefault()
 
-  form.name = ''
-  form.email = ''
-  form.phone = ''
-  form.course = ''
+  const user = login(form.email, form.password)
+
+  if (!user) {
+    loginError.value = true
+    loginMessage.value = 'Correo o contraseña incorrectos.'
+    return
+  }
+
+  loginError.value = false
+  loginMessage.value = `Sesión iniciada como ${user.rol}.`
   form.password = ''
+  void router.push('/lobby')
 }
 </script>
 
@@ -344,6 +330,17 @@ const handleSubmit = (event: Event) => {
 
 .login-button:active {
   transform: translateY(0);
+}
+
+.login-message {
+  margin: 0;
+  color: #86efac;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.login-message--error {
+  color: #fca5a5;
 }
 
 .login-links {

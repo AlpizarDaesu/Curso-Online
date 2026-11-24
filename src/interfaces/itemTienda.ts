@@ -3,6 +3,7 @@ export interface ItemTienda {
   nombre: string 
   precio: number
   imagen: string
-  preventa?: string 
+  preventa?: boolean
+  fechaPreventa?: string
   stock?: string
 }

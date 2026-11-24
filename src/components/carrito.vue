@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
+import { useRouter } from 'vue-router'
 import type { ItemTienda } from '../interfaces/itemTienda'
 import { cartItems as cartIds } from '../stores/cart'
 
@@ -28,7 +29,8 @@ const catalogo: ItemTienda[] = [
     nombre: 'Elden Ring: Nightreign',
     precio: 1199,
     imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmUwvT8nZPLwHi7ltLTeJJYJ1NQLYfqNSjn7DmYHDW3ZLNQw6DriFkQbw&s=10',
-    preventa: 'Preventa',
+    preventa: true,
+    fechaPreventa: '2026-12-10',
     stock: 'Próximamente'
   },
   {
@@ -36,7 +38,8 @@ const catalogo: ItemTienda[] = [
     nombre: 'Hollow Knight: Silksong',
     precio: 499,
     imagen: 'https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000105851/8787627be7f26ae7984456ffd9af17bea845032cebbf59fe6eeb596dea6bb20e',
-    preventa: 'Preventa',
+    preventa: true,
+    fechaPreventa: '2026-12-18',
     stock: 'Próximamente'
   },
   {
@@ -56,6 +59,7 @@ const catalogo: ItemTienda[] = [
 ]
 
 const cartItems = ref<CartItem[]>([])
+const router = useRouter()
 const subtotal = computed(() =>
   cartItems.value.reduce(
     (total, item) => total + item.producto.precio * item.cantidad,
@@ -100,6 +104,12 @@ const removeItem = (id: number) => {
   const index = cartIds.value.indexOf(id)
   if (index !== -1) cartIds.value.splice(index, 1)
   cartItems.value = cartItems.value.filter((item) => item.producto.id !== id)
+}
+
+const completePurchase = () => {
+  cartIds.value = []
+  cartItems.value = []
+  void router.push('/gracias')
 }
 </script>
 
@@ -164,7 +174,9 @@ const removeItem = (id: number) => {
           <strong>{{ formatPrice(subtotal) }}</strong>
         </div>
         <p class="tax-note">Impuestos incluidos. Los productos digitales no tienen costo de envío.</p>
-        <RouterLink to="/inscribirse" class="checkout-button">CONTINUAR</RouterLink>
+        <button type="button" class="checkout-button" @click="completePurchase">
+          CONTINUAR
+        </button>
         <section class="billing-details">
           <h3>Facturación y desglose</h3>
           <p>El subtotal incluye el precio de los artículos seleccionados.</p>
@@ -361,6 +373,7 @@ const removeItem = (id: number) => {
 
 .checkout-button {
   display: block;
+  width: 100%;
   margin-top: 1.25rem;
   padding: 0.85rem 1rem;
   border-radius: 0.65rem;

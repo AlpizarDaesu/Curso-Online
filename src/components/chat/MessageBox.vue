@@ -50,7 +50,7 @@ const sendMessage = () => {
   align-items: center;
   gap: 0.75rem;
   padding: 1rem;
-  border-top: 1px solid #dbe3ec;
+  border-top: 1px solid #000000;
   background: #100d17;
   border-top-color: var(--border);
 }
@@ -61,13 +61,14 @@ const sendMessage = () => {
   padding: 0.7rem 1rem;
   border: 1px solid var(--border);
   border-radius: 999px;
-  color: var(--text);
+  color: #000000;
+  background: #ffffff;
   font: inherit;
 }
 
 .message-box input:focus {
   border-color: var(--accent);
-  outline: 2px solid rgba(167, 139, 250, 0.25);
+  outline: 2px solid rgba(26, 26, 27, 0.25);
 }
 
 .message-box button {

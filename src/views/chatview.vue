@@ -3,31 +3,99 @@ import { ref } from 'vue'
 import ChatMessages from '../components/chat/ChatMessages.vue'
 import MessageBox from '../components/chat/MessageBox.vue'
 import type { ChatMessage } from '../interfaces/chat-message.interface'
+import type { GIFResponse } from '../interfaces/gif.response'
+
+interface PreMadeResponse {
+  keywords: string[]
+  message: string
+}
+
+const preMadeResponses: PreMadeResponse[] = [
+  {
+    keywords: ['registrarme', 'registro', 'registrar'],
+    message: 'Da click en el botón de iniciar sesión.'
+  },{
+    keywords: ['hola', 'buenos dias', 'buenas tardes', 'buenas noches',"buenas"],
+    message: 'Hola, en qué puedo ayudarte?'
+  },
+  {
+    keywords: ['carrito', 'comprar', 'compra'],
+    message: 'Puedes agregar los juegos desde la tienda y revisar tus productos en el carrito.'
+  },
+  {
+    keywords: ['preventa', 'preventas', 'lanzamiento'],
+    message: 'Los juegos con preventa tienen la opción Agregar al calendario.'
+  },
+  {
+    keywords: ['calendario', 'agenda', 'fecha'],
+    message: 'En el calendario puedes consultar las fechas de tus preventas como usuario.'
+  },{
+    keywords: ['adios', 'gracias', 'hasta luego'],
+    message: 'Adiós! Si necesitas ayuda en el futuro, no dudes en volver.'
+  },
+  {
+    keywords: ['ayuda', 'soporte', 'problema'],
+    message: 'Puedes consultar ayuda sobre registro, carrito, compras, preventas o calendario.'
+  }
+]
+
+type GifUrl = GIFResponse['data']['images']['fixed_height']['url']
+
+const fallbackResponse = 'No te entendí, ¿puedes reformular tu pregunta?'
+const fallbackGif = 'https://media.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif'
+
+const normalizeText = (text: string) =>
+  text
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+
+const getRandomGif = async (): Promise<GifUrl> => {
+  try {
+    const response = await fetch(
+      'https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&rating=g&tag=funny'
+    )
+
+    if (!response.ok) return fallbackGif
+
+    const gifResponse = await response.json() as GIFResponse
+    return gifResponse.data.images.fixed_height.url
+  } catch {
+    return fallbackGif
+  }
+}
+
+const getPreMadeResponse = (text: string): string => {
+  const normalizedText = normalizeText(text)
+  const response = preMadeResponses.find((item) =>
+    item.keywords.some((keyword) => normalizedText.includes(normalizeText(keyword)))
+  )
+
+  return response?.message ?? fallbackResponse
+}
 
 const messages = ref<ChatMessage[]>([
-    {
-        id: Date.now(),
-        message: 'Hola mundo!!!',
-        itsMine: true
-    },
-    {
-        id: Date.now() + 1,
-        message: '¿Quieres ir a tomar cafe?',
-        itsMine: true
-    },
-    {
-        id: Date.now() + 2,
-        message: 'No',
-        itsMine: false,
-        image: 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnJ2Nzh4a3JlYnIzeDk0eXdqc3FjejN2OTd3dnc3c21jMm1zeHM2ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/h5l0zxkKIGc1rWIP6a/giphy.gif'
-    },
+  {
+    id: Date.now(),
+    message: 'Hola, soy tu asistente de ayuda.',
+    itsMine: false
+  }
 ])
 
-const onMessage = (text: string) => {
+const onMessage = async (text: string) => {
   messages.value.push({
     id: Date.now(),
     itsMine: true,
     message: text,
+  })
+
+  await new Promise((resolve) => window.setTimeout(resolve, 500))
+
+  messages.value.push({
+    id: Date.now(),
+    itsMine: false,
+    message: getPreMadeResponse(text),
+    image: await getRandomGif()
   })
 }
 </script>

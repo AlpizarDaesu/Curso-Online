@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import type { ItemTienda } from '../interfaces/itemTienda'
 import { cartItems } from '../stores/cart'
+import { currentUser } from '../stores/auth'
+
+const router = useRouter()
 
 const items = ref<ItemTienda[]>([
   {
@@ -23,7 +27,8 @@ const items = ref<ItemTienda[]>([
     nombre: 'Elden Ring: Nightreign',
     precio: 1199,
     imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmUwvT8nZPLwHi7ltLTeJJYJ1NQLYfqNSjn7DmYHDW3ZLNQw6DriFkQbw&s=10',
-    preventa: 'Preventa',
+    preventa: true,
+    fechaPreventa: '2026-12-10',
     stock: 'Próximamente'
   },
   {
@@ -31,7 +36,8 @@ const items = ref<ItemTienda[]>([
     nombre: 'Hollow Knight: Silksong',
     precio: 499,
     imagen: 'https://assets.nintendo.com/image/upload/q_auto/f_auto/store/software/switch2/70010000105851/8787627be7f26ae7984456ffd9af17bea845032cebbf59fe6eeb596dea6bb20e',
-    preventa: 'Preventa',
+    preventa: true,
+    fechaPreventa: '2026-12-18',
     stock: 'Próximamente'
   },
   {
@@ -62,6 +68,39 @@ const addToCart = (id: number) => {
     cartItems.value.push(id)
   }
 }
+
+const addToCalendar = (item: ItemTienda) => {
+  if (currentUser.value?.rol !== 'Usuario') {
+    void router.push('/inscribirse')
+    return
+  }
+
+  if (!item.fechaPreventa) return
+
+  const storageKey = 'preventasUsuario'
+  const stored = localStorage.getItem(storageKey)
+  let preventas: Array<{ id: string; title: string; date: string; platform: string }> = []
+
+  if (stored) {
+    try {
+      preventas = JSON.parse(stored)
+    } catch {
+      localStorage.removeItem(storageKey)
+    }
+  }
+
+  if (!preventas.some((preventa) => preventa.title === item.nombre)) {
+    preventas.push({
+      id: `producto-${item.id}`,
+      title: item.nombre,
+      date: item.fechaPreventa,
+      platform: 'PC'
+    })
+    localStorage.setItem(storageKey, JSON.stringify(preventas))
+  }
+
+  void router.push('/calendario')
+}
 </script>
 
 <template>
@@ -72,18 +111,13 @@ const addToCart = (id: number) => {
         <h1 id="store-title">Explora la tienda</h1>
         <p class="intro">Tus próximas aventuras empiezan aquí.</p>
       </div>
-      <div class="cart-summary" aria-live="polite">
-        <span class="cart-icon" aria-hidden="true">🛒</span>
-        <span>Carrito</span>
-        <span class="cart-count">{{ cartItems.length }}</span>
-      </div>
     </section>
 
     <section class="catalog" aria-label="Catálogo de videojuegos">
       <article v-for="item in items" :key="item.id" class="game-card">
         <div class="game-art">
           <img :src="item.imagen" :alt="`Imagen de ${item.nombre}`" loading="lazy">
-          <span v-if="item.preventa" class="badge preorder">{{ item.preventa }}</span>
+          <span v-if="item.preventa" class="badge preorder">Preventa</span>
           <span v-else-if="item.stock === 'Últimas unidades'" class="badge limited">
             {{ item.stock }}
           </span>
@@ -98,6 +132,15 @@ const addToCart = (id: number) => {
           <div class="purchase-row">
             <p class="price">{{ formatPrice(item.precio) }}</p>
             <button
+              v-if="item.preventa"
+              type="button"
+              class="add-button preorder-button"
+              @click="addToCalendar(item)"
+            >
+              Agregar al calendario
+            </button>
+            <button
+              v-else
               type="button"
               class="add-button"
               :class="{ added: cartItems.includes(item.id) }"
